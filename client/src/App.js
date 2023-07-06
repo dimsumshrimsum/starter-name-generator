@@ -1,17 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 
 const App = () => {
-  const [name, setName] = useState([])
+  const [name, setName] = useState([]);
 
   useEffect(() => {
-    fetch('https://enigmatic-shore-92552.herokuapp.com/generate')
+    fetch("https://starter-name-generator.onrender.com/api/generate") // Change this URL to the one that you just deployed
       .then((res) => res.json())
-      .then((nme) => setName([nme]))
-  }, [])
+      .then((name) => setName([name]));
+  }, []);
 
-  return (
-    <h1>{name}</h1>
-  )
-}
+  return <h1>{name}</h1>;
+};
 
-export default App
+export default App;
